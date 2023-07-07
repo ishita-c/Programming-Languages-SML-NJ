@@ -1,0 +1,44 @@
+
+The function `mdt2html(filename: string)` takes the name of the file without the mdt extension as input.
+For example
+- `mdt2html("mdtab");` processes markdown file `mdtab.mdt` and generates output file `mdtab.html` which can be viewed in any browser.
+- `mdt2html("test_errors");` processes markdown file `test_errors.mdt` and throws the relevant error message in console.
+
+Here, "mdtab.mdt" and "test_errors.mdt" are the two test cases file.
+
+### Features Implemented
+
+- Headings (6 levels)
+- Bolding/Italics/Underlining (Combinations like Underlined bold and Italicised bold also work)
+- Horizontal Ruling (with atleast 3 hyphens)
+- Block Quotes (email-style)
+- Links (direct href and automatic links)
+- Lists (Ordered/Unordered)
+- Tables (Fields separated by "|")
+- Codeblocks (Each line of the codeblock must start with a Tab)
+- Paragraphing 
+- All inline HTML tags are left unchanged as required
+- Number-period-space sequence is also implemented 
+
+All these features have been tested individually at the end in the "mdtab.mdt" file submitted along with the code.
+
+
+### Error handling 
+
+- Heading errors
+- Table errors
+- Incorrect formatting of asterisks
+
+All these errors have been tested in the "test_errors.mdt" file submitted along with the code. Since only the first error found in the file is reported, testing has been done accordingly by editing the test file.
+
+
+### Assumptions / Design Decisions
+
+- Indirect links such as 'jg' and 'md' present at the end of given test file will not be used. Only automatic and direct links will be used as required in the assignment
+- Two empty lines will end any ordered list
+- Codeblocks have a Tab at the start of each line, Tab at the start of any line will render it as a codeblock
+- Text between double quotes will be rendered as is (For example. "---" does not render a horizontal line)
+- 3 asterisks is the syntax for Italicised bold
+
+
+I referred the markdown syntax from https://daringfireball.net/projects/markdown/syntax
